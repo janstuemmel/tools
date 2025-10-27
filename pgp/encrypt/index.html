@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pgp --encrypt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../common.css">
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>pgp --encrypt</h1>
+    </header>
+    <main>
+      <textarea
+        id="input-pubkey"
+        spellcheck="false"
+        autocomplete="off"
+        rows="5"
+        placeholder="pubkey"
+      ></textarea>
+      <textarea
+        id="input-pubkey-info"
+        spellcheck="false"
+        autocomplete="off"
+        disabled="disabled"
+        rows="1"
+        placeholder="pubkey info"
+      ></textarea>
+      <textarea
+        id="input-message"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="5"
+        placeholder="message"
+      ></textarea>
+      <textarea
+        readonly="readonly"
+        spellcheck="false"
+        autocomplete="off"
+        id="output-cipher"
+        rows="5"
+        placeholder="cipher"
+      ></textarea>
+    </main>
+  </body>
+</html>

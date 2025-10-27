@@ -1,0 +1,95 @@
+::selection, ::-moz-selection  {
+  background: #111;
+  color: white;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  color: black;
+}
+
+h1, h2, h3, h4, p, ul, li {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+li {
+  padding: 3px 0;
+}
+
+a {
+  color: black
+}
+
+header {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+header h1 {
+  letter-spacing: 2px;
+  font-family: monospace;
+}
+
+header h2 {
+  letter-spacing: 2px;
+  font-family: monospace;
+}
+
+header p {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+textarea, input {
+  background-color: lightgray;
+  color: black;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 10px;
+  font-size: larger;
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection, ::-moz-selection {
+    background: white;
+    color: #111111;
+  }
+  
+  body {
+    background-color: #111;
+    color: white
+  }
+
+  a {
+    color: white;
+  }
+
+  textarea, input {
+    background-color: black;
+    color: white;
+  }
+}

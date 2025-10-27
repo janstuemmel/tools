@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pgp --decrypt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../common.css">
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>pgp --decrypt</h1>
+    </header>
+    <main>
+      <textarea
+        id="input-privkey"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="3"
+        placeholder="privkey"
+      ></textarea>
+      <input
+        id="input-password"
+        type="password"
+        spellcheck="false"
+        autocomplete="off"
+        rows="1"
+        placeholder="password"
+      />
+      <textarea
+        id="input-cipher"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="5"
+        placeholder="cipher"
+      ></textarea>
+      <textarea
+        id="output-cleartext"
+        readonly="readonly"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="5"
+        placeholder="cleartext"
+      ></textarea>
+    </main>
+  </body>
+</html>
