@@ -1,5 +1,5 @@
 import { generateKey } from "https://esm.sh/openpgp@6.2.2";
-import { focusSelectCopy } from "../../common.js";
+import { focusSelectCopy } from "../../util.js";
 
 const usernameElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-username"));
 const emailElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-email"));

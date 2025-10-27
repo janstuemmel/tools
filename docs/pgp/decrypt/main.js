@@ -1,5 +1,5 @@
 import { decrypt, decryptKey, readMessage, readPrivateKey } from "https://esm.sh/openpgp@6.2.2";
-import { focusSelect } from "../../common.js";
+import { focusSelect } from "../../util.js";
 
 const privkeyElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-privkey"));
 const passwordElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-password"));

@@ -1,5 +1,5 @@
 import { createMessage, encrypt, readKey } from "https://esm.sh/openpgp@6.2.2";
-import { focusSelect, focusSelectCopy } from "../../common.js";
+import { focusSelect, focusSelectCopy } from "../../util.js";
 
 const pubkeyElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-pubkey"));
 const pubkeyInfoElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-pubkey-info"));
