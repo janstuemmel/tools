@@ -5,7 +5,7 @@ Deno.serve({ port: 1337 }, async (req) => {
   const { headers, status } = res;
 
   // enable autocomplete to have a better developer experience
-  if (headers.get("content-type").includes("text/html")) {
+  if (headers.get("content-type")?.includes("text/html")) {
     const html = await res.text();
     const modified = html.replaceAll('autocomplete="off"', 'autocomplete="on"');
     return new Response(modified, { status, headers });

@@ -1,15 +1,21 @@
 /**
- * @param {Event & { target: HTMLTextAreaElement | HTMLInputElement }} evt
+ * @param {PointerEvent} evt
  */
-export const focusSelect = ({ target }) => {
-  target.focus();
-  target.select();
+export const focusSelect = (evt) => {
+  const target = /** @type {HTMLTextAreaElement | HTMLInputElement} */ (evt.target);
+  if (target) {
+    target.focus();
+    target.select();
+  }
 };
 
 /**
- * @param {Event & { target: HTMLTextAreaElement | HTMLInputElement }} evt
+ * @param {PointerEvent} evt
  */
 export const focusSelectCopy = (evt) => {
+  const target = /** @type {HTMLTextAreaElement | HTMLInputElement} */ (evt.target);
   focusSelect(evt);
-  navigator.clipboard.writeText(evt.target.value);
+  if (target) {
+    navigator.clipboard.writeText(target.value);
+  }
 };

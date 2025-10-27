@@ -1,4 +1,4 @@
-::selection, ::-moz-selection  {
+::selection, ::-moz-selection {
   background: #111;
   color: white;
 }
@@ -24,7 +24,7 @@ li {
 }
 
 a {
-  color: black
+  color: black;
 }
 
 header {
@@ -78,10 +78,10 @@ textarea, input {
     background: white;
     color: #111111;
   }
-  
+
   body {
     background-color: #111;
-    color: white
+    color: white;
   }
 
   a {

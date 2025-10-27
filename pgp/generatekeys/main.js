@@ -1,19 +1,16 @@
 import { generateKey } from "https://esm.sh/openpgp@6.2.2";
 import { focusSelectCopy } from "../../common.js";
 
-/** @type {Record<string, HTMLTextAreaElement>} */
-const ELEM = {
-  username: document.getElementById("input-username"),
-  email: document.getElementById("input-email"),
-  password: document.getElementById("input-password"),
-  pubkey: document.getElementById("output-pubkey"),
-  privkey: document.getElementById("output-privkey"),
-};
+const usernameElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-username"));
+const emailElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-email"));
+const passwordElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-password"));
+const pubkeyElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("output-pubkey"));
+const privkeyElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("output-privkey"));
 
 const update = async () => {
-  const name = ELEM.username.value;
-  const email = ELEM.email.value;
-  const passphrase = ELEM.password.value ?? undefined;
+  const name = usernameElem.value;
+  const email = emailElem.value;
+  const passphrase = passwordElem.value ?? undefined;
 
   await generateKey({
     userIDs: [{ name, email }],
@@ -21,22 +18,22 @@ const update = async () => {
     format: "armored",
   })
     .then(({ privateKey, publicKey }) => {
-      ELEM.pubkey.value = publicKey;
-      ELEM.pubkey.rows = publicKey.split("\n").length;
-      ELEM.privkey.value = privateKey;
-      ELEM.privkey.rows = privateKey.split("\n").length;
+      pubkeyElem.value = publicKey;
+      pubkeyElem.rows = publicKey.split("\n").length;
+      privkeyElem.value = privateKey;
+      privkeyElem.rows = privateKey.split("\n").length;
     })
     .catch((e) => {
-      ELEM.pubkey.value = `Error: ${e.message}`;
-      ELEM.privkey.value = "";
+      pubkeyElem.value = `Error: ${e.message}`;
+      privkeyElem.value = "";
     });
 };
 
-ELEM.username.addEventListener("input", update);
-ELEM.email.addEventListener("input", update);
-ELEM.password.addEventListener("input", update);
+usernameElem.addEventListener("input", update);
+emailElem.addEventListener("input", update);
+passwordElem.addEventListener("input", update);
 
-ELEM.privkey.addEventListener("click", focusSelectCopy);
-ELEM.pubkey.addEventListener("click", focusSelectCopy);
+privkeyElem.addEventListener("click", focusSelectCopy);
+pubkeyElem.addEventListener("click", focusSelectCopy);
 
 update();

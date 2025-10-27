@@ -6,6 +6,12 @@
       ]
     }
   },
+  "fmt": {
+    "lineWidth": 120
+  },
+  "compilerOptions": {
+    "checkJs": true
+  },
   "tasks": {
     "start": "deno run --allow-net --allow-read --watch server.js"
   }
