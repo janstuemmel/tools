@@ -13,6 +13,7 @@
     "checkJs": true
   },
   "tasks": {
-    "start": "deno run --allow-net --allow-read --watch server.js"
+    "start": "deno run --allow-net --allow-read --watch server.js",
+    "compile": "deno compile --include docs -o tools server.js"
   }
 }
