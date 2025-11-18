@@ -1,7 +1,7 @@
 import { readCleartextMessage, readKey, verify } from "https://esm.sh/openpgp@6.2.2";
 import { focusSelect, growTextarea } from "../../util.js";
 
-const privkeyElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-pubkey"));
+const pubkeyElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-pubkey"));
 const signedMessageElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-signed-message"));
 const resultElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("output-result"));
 
@@ -21,7 +21,7 @@ const mapError = (e) => {
 };
 
 const update = async () => {
-  const armoredKey = privkeyElem.value;
+  const armoredKey = pubkeyElem.value;
   const text = signedMessageElem.value;
 
   if (!text) {
@@ -30,6 +30,7 @@ const update = async () => {
   }
 
   growTextarea(signedMessageElem);
+  growTextarea(pubkeyElem);
 
   await Promise.all([readKey({ armoredKey }), readCleartextMessage({ cleartextMessage: text })])
     .then(([verificationKeys, message]) => verify({ message, verificationKeys, expectSigned: true }))
@@ -44,9 +45,8 @@ const update = async () => {
 };
 
 signedMessageElem.addEventListener("input", update);
-privkeyElem.addEventListener("input", update);
+pubkeyElem.addEventListener("input", update);
 
-privkeyElem.addEventListener("click", focusSelect);
-signedMessageElem.addEventListener("click", focusSelect);
+pubkeyElem.addEventListener("click", focusSelect);
 
 update();
