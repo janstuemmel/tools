@@ -1,5 +1,5 @@
 import { readCleartextMessage, readKey, verify } from "https://esm.sh/openpgp@6.2.2";
-import { focusSelect, focusSelectCopy, growTextarea } from "../../util.js";
+import { focusSelect, growTextarea } from "../../util.js";
 
 const privkeyElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-pubkey"));
 const signedMessageElem = /** @type {HTMLTextAreaElement} */ (document.getElementById("input-signed-message"));
@@ -47,6 +47,6 @@ signedMessageElem.addEventListener("input", update);
 privkeyElem.addEventListener("input", update);
 
 privkeyElem.addEventListener("click", focusSelect);
-signedMessageElem.addEventListener("click", focusSelectCopy);
+signedMessageElem.addEventListener("click", focusSelect);
 
 update();
