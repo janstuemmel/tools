@@ -71,6 +71,8 @@ textarea, input {
   font-size: larger;
   font-family: monospace;
   letter-spacing: 2px;
+  overflow-wrap: normal;
+  white-space: pre;
 }
 
 @media (prefers-color-scheme: dark) {
