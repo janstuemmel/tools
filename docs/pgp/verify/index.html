@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pgp --verify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../common.css">
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>pgp --verify</h1>
+    </header>
+    <main>
+      <textarea
+        id="input-pubkey"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="3"
+        placeholder="pubkey"
+      ></textarea>
+      <textarea
+        id="input-signed-message"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="5"
+        placeholder="signed message"
+      ></textarea>
+      <input
+        id="output-result"
+        readonly="readonly"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        placeholder="result"
+      />
+    </main>
+  </body>
+</html>

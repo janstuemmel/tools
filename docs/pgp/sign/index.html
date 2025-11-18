@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pgp --sign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../common.css">
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>pgp --sign</h1>
+    </header>
+    <main>
+      <textarea
+        id="input-privkey"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="3"
+        placeholder="privkey"
+      ></textarea>
+      <input
+        id="input-password"
+        type="password"
+        spellcheck="false"
+        autocomplete="off"
+        rows="1"
+        placeholder="password"
+      />
+      <textarea
+        id="input-message"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="5"
+        placeholder="message"
+      ></textarea>
+      <textarea
+        id="output-signed-message"
+        readonly="readonly"
+        autocapitalize="off"
+        spellcheck="false"
+        autocomplete="off"
+        rows="5"
+        placeholder="signed message"
+      ></textarea>
+    </main>
+  </body>
+</html>

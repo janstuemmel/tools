@@ -19,3 +19,13 @@ export const focusSelectCopy = (evt) => {
     navigator.clipboard.writeText(target.value);
   }
 };
+
+/**
+ * 
+ * @param {HTMLTextAreaElement} elem 
+ * @param {number} rows 
+ */
+export const growTextarea = (elem, rows = 5) => {
+  const elemLength = elem.value.split("\n").length;
+  elem.rows = elemLength > rows ? elemLength : rows;
+}
